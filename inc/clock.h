@@ -1,3 +1,3 @@
 #include "stm32f4xx.h"
 
-void Clock_init(void);
+void clock_init(void);
