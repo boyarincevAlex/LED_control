@@ -386,6 +386,11 @@
               <FileType>1</FileType>
               <FilePath>.\scr\main.c</FilePath>
             </File>
+            <File>
+              <FileName>clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\scr\clock.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
