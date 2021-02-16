@@ -2,7 +2,7 @@
 #include "clock.h"
 
 
-void clock_init(void)
+void initClock(void)
 {
 	RCC->CR |= RCC_CR_HSEON    ;
 	
@@ -30,4 +30,5 @@ void clock_init(void)
 	NVIC_EnableIRQ(TIM3_IRQn);
 	
 	GPIOC->MODER |= GPIO_MODER_MODER13_0;
+
 }

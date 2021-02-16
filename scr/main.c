@@ -3,7 +3,7 @@
 int n = 0;
 int main()
 {
-	clock_init();
+	void initClock();
 	
 	while(1)
 	{
