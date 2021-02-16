@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>.\scr\device mode.c</FilePath>
             </File>
+            <File>
+              <FileName>LCD1602 driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\scr\LCD1602 driver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
