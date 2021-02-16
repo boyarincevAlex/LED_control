@@ -4,6 +4,7 @@ int n = 0;
 int main()
 {
 	void initClock();
+	void initI2c();
 	
 	while(1)
 	{

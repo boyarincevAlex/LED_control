@@ -33,3 +33,29 @@ void initClock(void)
 	GPIOC->MODER |= GPIO_MODER_MODER13_0;
 
 }
+
+void initI2c(void)
+{
+	//Don't forget to enable clock in GPIOB and I2C1
+	
+	GPIOB->MODER |= GPIO_MODER_MODER8_1;  //i2c scl
+	GPIOB->MODER |= GPIO_MODER_MODER9_1;	//i2c sda
+	
+	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR8_1 | GPIO_OSPEEDER_OSPEEDR9_1;
+	
+	GPIOB->OTYPER |= GPIO_OTYPER_OT8 | GPIO_OTYPER_OT9;
+	
+	GPIOB->AFR[1] |= GPIO_AFRH_AFRH0_2 | GPIO_AFRH_AFRH1_2;
+	
+	I2C1->CR2 &= ~I2C_CR2_FREQ;
+	I2C1->CR2 |= 16;
+	
+	I2C1->CCR &= ~I2C_CCR_CCR;
+	I2C1->CCR |= 160;
+	
+	I2C1->TRISE = 16;
+	I2C1->CR1 |= I2C_CR1_ACK;
+	
+	I2C1->CR1 |= I2C_CR1_PE;
+}	
+
