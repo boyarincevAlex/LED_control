@@ -4,6 +4,7 @@
 
 void initClock(void)
 {
+	//Frequency HSE - 25 MHz
 	RCC->CR |= RCC_CR_HSEON    ;
 	
 	while (!(RCC->CR & RCC_CR_HSERDY))
