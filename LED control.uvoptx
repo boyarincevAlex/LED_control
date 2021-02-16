@@ -247,8 +247,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\scr\clock.c</PathWithFileName>
-      <FilenameWithoutPath>clock.c</FilenameWithoutPath>
+      <PathWithFileName>.\scr\device mode.c</PathWithFileName>
+      <FilenameWithoutPath>device mode.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -259,8 +259,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\scr\device mode.c</PathWithFileName>
-      <FilenameWithoutPath>device mode.c</FilenameWithoutPath>
+      <PathWithFileName>.\scr\LCD1602 driver.c</PathWithFileName>
+      <FilenameWithoutPath>LCD1602 driver.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -271,8 +271,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\scr\LCD1602 driver.c</PathWithFileName>
-      <FilenameWithoutPath>LCD1602 driver.c</FilenameWithoutPath>
+      <PathWithFileName>.\scr\clock and perif.c</PathWithFileName>
+      <FilenameWithoutPath>clock and perif.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

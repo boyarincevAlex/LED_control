@@ -1,5 +1,5 @@
 #include "stm32f4xx.h"
-#include "clock.h"
+#include "clock and perif.h"
 
 
 void initClock(void)

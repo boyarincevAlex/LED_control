@@ -389,11 +389,6 @@
               <FilePath>.\scr\main.c</FilePath>
             </File>
             <File>
-              <FileName>clock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\scr\clock.c</FilePath>
-            </File>
-            <File>
               <FileName>device mode.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\scr\device mode.c</FilePath>
@@ -402,6 +397,11 @@
               <FileName>LCD1602 driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\scr\LCD1602 driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>clock and perif.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\scr\clock and perif.c</FilePath>
             </File>
           </Files>
         </Group>

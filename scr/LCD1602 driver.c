@@ -49,18 +49,21 @@ void sendLcdByte(uint8_t addr, uint8_t data, uint8_t flags)
 		I2C1->CR1 |= I2C_CR1_STOP;
 }
 	
-void sendLcdString(uint8_t lcd_addr, char *str) {
+void sendLcdString(uint8_t lcd_addr, char *str) 
+{
     while(*str) {
         sendLcdData(lcd_addr, (uint8_t)(*str));
         str++;
     }
 }
 
-void sendLcdCommand(uint8_t lcd_addr, uint8_t cmd) {
+void sendLcdCommand(uint8_t lcd_addr, uint8_t cmd) 
+{
     sendLcdByte(lcd_addr, cmd, 0);
 }
 
-void sendLcdData(uint8_t lcd_addr, uint8_t data) {
+void sendLcdData(uint8_t lcd_addr, uint8_t data) 
+{
     sendLcdByte(lcd_addr, data, PIN_RS);
 }
 
