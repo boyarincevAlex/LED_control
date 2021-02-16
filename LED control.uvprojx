@@ -403,6 +403,11 @@
               <FileType>1</FileType>
               <FilePath>.\scr\clock and perif.c</FilePath>
             </File>
+            <File>
+              <FileName>display mode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\scr\display mode.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
