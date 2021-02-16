@@ -47,6 +47,7 @@ void sendLcdByte(uint8_t addr, uint8_t data, uint8_t flags)
 			}	
 		
 		I2C1->CR1 |= I2C_CR1_STOP;
+		Delay(5);
 }
 	
 void sendLcdString(uint8_t lcd_addr, char *str) 
@@ -91,4 +92,31 @@ void initLcd(void)
 	sendLcdCommand(LCD_ADDR, 0b00000001);
 }
 
+void Delay(uint32_t nCount) 
+{
+	nCount *= 4000;
+	while (nCount != 0)
+		nCount--;
+}
+
+int convertPositionToAdress(uint8_t string, uint8_t column)
+{
+	int adress;
+	if (string == 1)
+		adress = 0b10000000;
+	else if (string == 2)
+		adress = 0b11000000;
+	else adress = 0;
+	
+	adress = adress + column - 1;
+	return adress;
+}
+
+void sendLcdStringToPosition(uint8_t string, uint8_t column, char *str)
+{
+	int adress = convertPositionToAdress(string, column);
+	sendLcdCommand(LCD_ADDR, adress);
+	sendLcdString(LCD_ADDR, str); 
+}
+	
 

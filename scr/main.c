@@ -18,7 +18,6 @@ void TIM3_IRQHandler(void)
 {
 	TIM3->SR &= ~TIM_SR_UIF;
 	GPIOC->ODR ^= GPIO_ODR_ODR_13;
-	sendLcdCommand(LCD_ADDR, 0b10000000);
-	sendLcdString(LCD_ADDR, "LCD init");
+	sendLcdStringToPosition(2,2,"LCD string");
 	n++;
 }

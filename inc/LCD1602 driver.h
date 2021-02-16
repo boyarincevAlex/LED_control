@@ -10,5 +10,8 @@ void sendLcdString(uint8_t lcd_addr, char *str);
 void sendI2cByte(uint8_t data);
 void sendLcdCommand(uint8_t lcd_addr, uint8_t cmd);
 void sendLcdData(uint8_t lcd_addr, uint8_t data);
+void Delay(uint32_t nCount);
+int convertPositionToAdress(uint8_t string, uint8_t column);
+void sendLcdStringToPosition(uint8_t string, uint8_t column, char *str);
 
 
