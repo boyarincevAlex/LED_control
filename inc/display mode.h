@@ -6,3 +6,7 @@ typedef enum _DISPLAY_MODE
 	INFORMATION = 2,
 	SETTING = 3
 } DISPLAY_MODE;
+
+void displayModeHandler(uint32_t displayMode);
+
+extern uint32_t bDisplayMode;

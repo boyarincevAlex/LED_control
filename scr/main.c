@@ -1,7 +1,8 @@
 #include "stm32f4xx.h"
-#include "LCD1602 driver.h"
+#include "display mode.h"
 
 int n = 0;
+uint32_t bDisplayMode = MAIN;
 int main()
 {
 	initClock();
@@ -18,6 +19,11 @@ void TIM3_IRQHandler(void)
 {
 	TIM3->SR &= ~TIM_SR_UIF;
 	GPIOC->ODR ^= GPIO_ODR_ODR_13;
-	sendLcdStringToPosition(2,2,"LCD string");
+	displayModeHandler(bDisplayMode);
 	n++;
+	if (n>10)
+	{
+		bDisplayMode = INFORMATION;
+		n = 0;
+	}
 }
