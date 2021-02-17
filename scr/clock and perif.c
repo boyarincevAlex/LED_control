@@ -39,7 +39,7 @@ void initClock(void)
 	NVIC_EnableIRQ(TIM3_IRQn);
 	
 	GPIOC->MODER |= GPIO_MODER_MODER13_0;
-
+	
 }
 
 void initI2c(void)
@@ -69,5 +69,17 @@ void initI2c(void)
 
 void initAdc(void)
 {
+	//Don't forget to enable clock in GPIOA and ADC1
+	GPIOA->MODER |= GPIO_MODER_MODER1;
+	GPIOB->MODER |= GPIO_MODER_MODER0;
 	
+	ADC1->CR2 |= ADC_CR2_ADON | ADC_CR2_EXTEN_0 | ADC_CR2_EXTSEL_3;
+	ADC1->SMPR2 = ADC_SMPR2_SMP8_0; 
+	NVIC_EnableIRQ(ADC_IRQn);
+	ADC1->CR1 = ADC_CR1_EOCIE;
+	
+	ADC1->SQR1 = 0x00000000;
+	ADC1->SQR2 = 0x00000000;
+	ADC1->SQR3 = 0x00000008; 
+	ADC1->CR2 |= ADC_CR2_SWSTART;
 }
