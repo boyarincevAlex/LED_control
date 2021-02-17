@@ -5,8 +5,7 @@ int n = 0;
 uint32_t bDisplayMode = MAIN;
 int main()
 {
-	initClock();
-	initI2c();
+	initSystem();
 	initLcd();
 	
 	while(1)

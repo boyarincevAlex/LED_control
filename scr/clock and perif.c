@@ -2,6 +2,14 @@
 #include "clock and perif.h"
 
 
+void initSystem(void)
+{
+	initClock();
+	initI2c();
+	initAdc();
+	
+}
+
 void initClock(void)
 {
 	//Frequency HSE - 25 MHz
@@ -59,3 +67,7 @@ void initI2c(void)
 	I2C1->CR1 |= I2C_CR1_PE;
 }	
 
+void initAdc(void)
+{
+	
+}
