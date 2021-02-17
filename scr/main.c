@@ -14,9 +14,9 @@ int main()
 	}
 }
 
-void TIM3_IRQHandler(void)
+void TIM5_IRQHandler(void)
 {
-	TIM3->SR &= ~TIM_SR_UIF;
+	TIM5->SR &= ~TIM_SR_UIF;
 	GPIOC->ODR ^= GPIO_ODR_ODR_13;
 	displayModeHandler(bDisplayMode);
 	n++;
@@ -26,3 +26,5 @@ void TIM3_IRQHandler(void)
 		n = 0;
 	}
 }
+
+

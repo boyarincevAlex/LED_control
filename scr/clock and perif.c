@@ -5,6 +5,7 @@
 void initSystem(void)
 {
 	initClock();
+	initTimer();
 	initI2c();
 	initAdc();
 	
@@ -31,12 +32,6 @@ void initClock(void)
 	
 	RCC->APB2ENR |= RCC_APB2ENR_ADC1EN  |
 									RCC_APB2ENR_SYSCFGEN;
-
-	TIM3->ARR = 25000;
-	TIM3->PSC = 1000-1;
-	TIM3->DIER |= TIM_DIER_UIE;
-	TIM3->CR1 |= TIM_CR1_CEN;
-	NVIC_EnableIRQ(TIM3_IRQn);
 	
 	GPIOC->MODER |= GPIO_MODER_MODER13_0;
 	
@@ -82,4 +77,21 @@ void initAdc(void)
 	ADC1->SQR2 = 0x00000000;
 	ADC1->SQR3 = 0x00000008; 
 	ADC1->CR2 |= ADC_CR2_SWSTART;
+}
+
+void initTimer(void)
+{
+	//Test Timer - Time 1s 
+	TIM5->ARR = 25000;
+	TIM5->PSC = 1000-1;
+	TIM5->DIER |= TIM_DIER_UIE;
+	TIM5->CR1 |= TIM_CR1_CEN;
+	NVIC_EnableIRQ(TIM5_IRQn);
+	
+	//ADC Timer - Time 1ms
+	TIM3->DIER |= TIM_DIER_UIE;
+	TIM3->ARR = 2500;
+	TIM3->PSC = 1000-1;
+	TIM3->CR1 |= TIM_CR1_CEN;
+	TIM3->CR2 |= TIM_CR2_MMS_1; 
 }
