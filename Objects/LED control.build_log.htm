@@ -26,32 +26,14 @@ Project File Date:  02/16/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Target 1'
-compiling main.c...
-.\inc\display mode.h(12): warning:  #1-D: last line of file ends without a newline
-  extern uint32_t bDisplayMode;
-scr\main.c(8): warning:  #223-D: function "initSystem" declared implicitly
-        initSystem();
-scr\main.c(9): warning:  #223-D: function "initLcd" declared implicitly
-        initLcd();
-scr\main.c: 3 warnings, 0 errors
+Build target 'Target 1'
 compiling device mode.c...
-compiling LCD1602 driver.c...
-compiling clock and perif.c...
-.\inc\clock and perif.h(3): warning:  #1295-D: Deprecated declaration initSystem - give arg types
-  void initSystem();
-scr\clock and perif.c(97): warning:  #1-D: last line of file ends without a newline
-  }
-scr\clock and perif.c: 2 warnings, 0 errors
-compiling display mode.c...
-.\inc\display mode.h(12): warning:  #1-D: last line of file ends without a newline
-  extern uint32_t bDisplayMode;
-scr\display mode.c: 1 warning, 0 errors
-assembling startup_stm32f411xe.s...
-compiling system_stm32f4xx.c...
+.\inc\device mode.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif /* __DEVICE_MODE_H */
+scr\device mode.c: 1 warning, 0 errors
 linking...
-Program Size: Code=1548 RO-data=440 RW-data=8 ZI-data=1632  
-".\Objects\LED control.axf" - 0 Error(s), 6 Warning(s).
+Program Size: Code=1776 RO-data=440 RW-data=28 ZI-data=1636  
+".\Objects\LED control.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -82,7 +64,7 @@ Package Vendor: Keil
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:14
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
