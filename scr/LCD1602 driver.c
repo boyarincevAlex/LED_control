@@ -120,3 +120,16 @@ void sendLcdStringToPosition(uint8_t string, uint8_t column, char *str)
 }
 	
 
+
+void sendIntData3ToDisplay(int string, int column, int data)
+{
+		int adress = convertPositionToAdress(string, column);
+		int DATA1[3];
+		DATA1[0] = data/100 + 0x30;
+		DATA1[1] = data/10 % 10 + 0x30;
+		DATA1[2] = data % 10 + 0x30;
+		sendLcdCommand(LCD_ADDR, adress);
+		sendLcdData(LCD_ADDR, DATA1[0]);
+		sendLcdData(LCD_ADDR, DATA1[1]);
+		sendLcdData(LCD_ADDR, DATA1[2]);
+}

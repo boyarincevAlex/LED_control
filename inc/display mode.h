@@ -8,7 +8,7 @@ typedef enum _DISPLAY_MODE
 } DISPLAY_MODE;
 
 void displayModeHandler(uint32_t displayMode);
-void sendCurrentDataToDisplay(void);
+void sendCurrentDataToDisplay(int string, int column);
 void convertAdcCurrentDataToDisplay(void);
 
 extern uint32_t bDisplayMode;

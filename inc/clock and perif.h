@@ -5,5 +5,5 @@ void initClock(void);
 void initTimer(void);
 void initI2c(void);
 void initAdc(void);
-
+void initButton(void);
 

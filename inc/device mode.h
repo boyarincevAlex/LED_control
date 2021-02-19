@@ -4,6 +4,10 @@
 #include "stm32f4xx.h"
 
 int getAdcCurrentData(void);
+int get_b1(void);
+int get_b2(void);
+int get_b3(void);
+int get_b4(void);
 	
 typedef enum _DEVICE_MODE
 {

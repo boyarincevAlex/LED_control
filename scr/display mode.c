@@ -4,7 +4,10 @@
 
 char* STRING;
 char DATA1[4];
-char* word = "FA";
+int but1;
+int but2;
+int but3;
+int but4;
 
 void displayModeHandler(uint32_t displayMode)
 {
@@ -12,8 +15,21 @@ void displayModeHandler(uint32_t displayMode)
 		{
 		case MAIN:
 		{
-			sendLcdStringToPosition(1,5, "mA");
-			sendCurrentDataToDisplay();
+			but1 = get_b1();
+			but2 = get_b2();
+			but3 = get_b3();
+			but4 = get_b4();
+			sendLcdStringToPosition(1,1, "b1:");
+			sendLcdStringToPosition(1,8, "b2:");
+			sendLcdStringToPosition(2,1, "b3:");
+			sendLcdStringToPosition(2,8, "b4:");
+			
+			//sendLcdStringToPosition(1,5, "mA");
+			//sendCurrentDataToDisplay(1,1);
+			sendIntData3ToDisplay(1,4, but1);
+			sendIntData3ToDisplay(1,11, but2);
+			sendIntData3ToDisplay(2,4, but3);
+			sendIntData3ToDisplay(2,11, but4);
 			break;
 		}
 		
@@ -36,10 +52,10 @@ void displayModeHandler(uint32_t displayMode)
 	}
 }
 
-void sendCurrentDataToDisplay(void)
+void sendCurrentDataToDisplay(int string, int column)
 {
 			convertAdcCurrentDataToDisplay();
-			sendLcdStringToPosition(1,1, STRING);
+			sendLcdStringToPosition(string, column, STRING);
 //		sendLcdCommand(LCD_ADDR, 0b10000000);
 //		sendLcdData(LCD_ADDR, DATA1[0]);
 //		sendLcdData(LCD_ADDR, DATA1[1]);
@@ -55,6 +71,7 @@ void convertAdcCurrentDataToDisplay(void)
 		//char DATA1[4];
 		int DATA_ADC;
 		DATA_ADC = getAdcCurrentData();
+		//DATA_ADC = get_m();
 		DATA1[0] = DATA_ADC/100 + 0x30;
 		DATA1[1] = DATA_ADC/10 % 10 + 0x30;
 		DATA1[2] = 0x2E;
@@ -62,3 +79,5 @@ void convertAdcCurrentDataToDisplay(void)
 		STRING = &DATA1[0];
 		*(STRING+4) = 0;
 }
+
+
