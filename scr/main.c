@@ -18,7 +18,7 @@ int main()
 void TIM5_IRQHandler(void)
 {
 	TIM5->SR &= ~TIM_SR_UIF;
-	GPIOC->ODR ^= GPIO_ODR_ODR_13;
+	//GPIOC->ODR ^= GPIO_ODR_ODR_13;
 
 	displayModeHandler(bDisplayMode);
 //	n++;

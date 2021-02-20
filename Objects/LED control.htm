@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\LED control.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\LED control.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Feb 19 13:11:57 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Feb 19 17:09:26 2021
 <BR><P>
 <H3>Maximum Stack Usage =         80 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -519,183 +519,198 @@ Global Symbols
 <P><STRONG><a name="[1e]"></a>ADC_IRQHandler</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, device mode.o(i.ADC_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(RESET)
 </UL>
-<P><STRONG><a name="[71]"></a>Delay</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, lcd1602 driver.o(i.Delay))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
+<P><STRONG><a name="[5d]"></a>Delay</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, lcd1602 driver.o(i.Delay))
+<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI9_5_IRQHandler
+<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI4_IRQHandler
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[15]"></a>EXTI3_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, device mode.o(i.EXTI3_IRQHandler))
+<P><STRONG><a name="[15]"></a>EXTI3_IRQHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, device mode.o(i.EXTI3_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI3_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(RESET)
 </UL>
-<P><STRONG><a name="[16]"></a>EXTI4_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, device mode.o(i.EXTI4_IRQHandler))
+<P><STRONG><a name="[16]"></a>EXTI4_IRQHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, device mode.o(i.EXTI4_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI4_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(RESET)
 </UL>
-<P><STRONG><a name="[1f]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, device mode.o(i.EXTI9_5_IRQHandler))
+<P><STRONG><a name="[1f]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, device mode.o(i.EXTI9_5_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI9_5_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(RESET)
 </UL>
 <P><STRONG><a name="[45]"></a>SystemInit</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, system_stm32f4xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(.text)
 </UL>
-<P><STRONG><a name="[34]"></a>TIM5_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, main.o(i.TIM5_IRQHandler))
+<P><STRONG><a name="[34]"></a>TIM5_IRQHandler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, main.o(i.TIM5_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = TIM5_IRQHandler &rArr; displayModeHandler &rArr; sendLcdStringToPosition &rArr; sendLcdString &rArr; sendLcdData &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f411xe.o(RESET)
 </UL>
-<P><STRONG><a name="[6d]"></a>convertPositionToAdress</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd1602 driver.o(i.convertPositionToAdress))
-<BR><BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
+<P><STRONG><a name="[6e]"></a>convertPositionToAdress</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd1602 driver.o(i.convertPositionToAdress))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
 </UL>
 
-<P><STRONG><a name="[5d]"></a>displayModeHandler</STRONG> (Thumb, 160 bytes, Stack size 8 bytes, display mode.o(i.displayModeHandler))
+<P><STRONG><a name="[5e]"></a>displayModeHandler</STRONG> (Thumb, 160 bytes, Stack size 8 bytes, display mode.o(i.displayModeHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = displayModeHandler &rArr; sendLcdStringToPosition &rArr; sendLcdString &rArr; sendLcdData &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b4
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b3
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b2
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b1
+<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b4
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b3
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b2
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_b1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 </UL>
 
-<P><STRONG><a name="[5e]"></a>get_b1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b1))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<P><STRONG><a name="[5f]"></a>get_b1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b1))
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
-<P><STRONG><a name="[5f]"></a>get_b2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b2))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<P><STRONG><a name="[60]"></a>get_b2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b2))
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
-<P><STRONG><a name="[60]"></a>get_b3</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b3))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<P><STRONG><a name="[61]"></a>get_b3</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b3))
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
-<P><STRONG><a name="[61]"></a>get_b4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b4))
-<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<P><STRONG><a name="[62]"></a>get_b4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, device mode.o(i.get_b4))
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
-<P><STRONG><a name="[64]"></a>initAdc</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, clock and perif.o(i.initAdc))
+<P><STRONG><a name="[65]"></a>initAdc</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, clock and perif.o(i.initAdc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = initAdc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
 </UL>
 
-<P><STRONG><a name="[66]"></a>initButton</STRONG> (Thumb, 360 bytes, Stack size 8 bytes, clock and perif.o(i.initButton))
+<P><STRONG><a name="[67]"></a>initButton</STRONG> (Thumb, 360 bytes, Stack size 8 bytes, clock and perif.o(i.initButton))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = initButton
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
-</UL>
-
-<P><STRONG><a name="[6a]"></a>initClock</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, clock and perif.o(i.initClock))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
 </UL>
 
-<P><STRONG><a name="[6c]"></a>initI2c</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, clock and perif.o(i.initI2c))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+<P><STRONG><a name="[6b]"></a>initClock</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, clock and perif.o(i.initClock))
+<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
 </UL>
 
-<P><STRONG><a name="[67]"></a>initLcd</STRONG> (Thumb, 60 bytes, Stack size 4 bytes, lcd1602 driver.o(i.initLcd))
+<P><STRONG><a name="[6d]"></a>initI2c</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, clock and perif.o(i.initI2c))
+<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+</UL>
+
+<P><STRONG><a name="[68]"></a>initLcd</STRONG> (Thumb, 60 bytes, Stack size 4 bytes, lcd1602 driver.o(i.initLcd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = initLcd &rArr; sendLcdCommand &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[69]"></a>initSystem</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, clock and perif.o(i.initSystem))
+<P><STRONG><a name="[6a]"></a>initSystem</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, clock and perif.o(i.initSystem))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = initSystem &rArr; initTimer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initI2c
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initClock
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initButton
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initAdc
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initI2c
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initClock
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initButton
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initAdc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6b]"></a>initTimer</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, clock and perif.o(i.initTimer))
+<P><STRONG><a name="[6c]"></a>initTimer</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, clock and perif.o(i.initTimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = initTimer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
 </UL>
 
 <P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = main &rArr; initLcd &rArr; sendLcdCommand &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initLcd
+<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initSystem
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initLcd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[70]"></a>sendI2cByte</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lcd1602 driver.o(i.sendI2cByte))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
+<P><STRONG><a name="[71]"></a>sendI2cByte</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lcd1602 driver.o(i.sendI2cByte))
+<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
 </UL>
 
-<P><STRONG><a name="[63]"></a>sendIntData3ToDisplay</STRONG> (Thumb, 102 bytes, Stack size 32 bytes, lcd1602 driver.o(i.sendIntData3ToDisplay))
+<P><STRONG><a name="[64]"></a>sendIntData3ToDisplay</STRONG> (Thumb, 102 bytes, Stack size 32 bytes, lcd1602 driver.o(i.sendIntData3ToDisplay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = sendIntData3ToDisplay &rArr; sendLcdData &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertPositionToAdress
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertPositionToAdress
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
-<P><STRONG><a name="[6f]"></a>sendLcdByte</STRONG> (Thumb, 204 bytes, Stack size 20 bytes, lcd1602 driver.o(i.sendLcdByte))
+<P><STRONG><a name="[70]"></a>sendLcdByte</STRONG> (Thumb, 204 bytes, Stack size 20 bytes, lcd1602 driver.o(i.sendLcdByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendI2cByte
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendI2cByte
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
+<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
 </UL>
 
-<P><STRONG><a name="[68]"></a>sendLcdCommand</STRONG> (Thumb, 18 bytes, Stack size 12 bytes, lcd1602 driver.o(i.sendLcdCommand))
+<P><STRONG><a name="[69]"></a>sendLcdCommand</STRONG> (Thumb, 18 bytes, Stack size 12 bytes, lcd1602 driver.o(i.sendLcdCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = sendLcdCommand &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initLcd
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initLcd
 </UL>
 
-<P><STRONG><a name="[6e]"></a>sendLcdData</STRONG> (Thumb, 18 bytes, Stack size 12 bytes, lcd1602 driver.o(i.sendLcdData))
+<P><STRONG><a name="[6f]"></a>sendLcdData</STRONG> (Thumb, 18 bytes, Stack size 12 bytes, lcd1602 driver.o(i.sendLcdData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = sendLcdData &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdByte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdString
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendIntData3ToDisplay
 </UL>
 
 <P><STRONG><a name="[72]"></a>sendLcdString</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, lcd1602 driver.o(i.sendLcdString))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = sendLcdString &rArr; sendLcdData &rArr; sendLcdByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdStringToPosition
 </UL>
 
-<P><STRONG><a name="[62]"></a>sendLcdStringToPosition</STRONG> (Thumb, 36 bytes, Stack size 20 bytes, lcd1602 driver.o(i.sendLcdStringToPosition))
+<P><STRONG><a name="[63]"></a>sendLcdStringToPosition</STRONG> (Thumb, 36 bytes, Stack size 20 bytes, lcd1602 driver.o(i.sendLcdStringToPosition))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = sendLcdStringToPosition &rArr; sendLcdString &rArr; sendLcdData &rArr; sendLcdByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdString
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertPositionToAdress
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendLcdCommand
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertPositionToAdress
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayModeHandler
 </UL>
 
 <P><STRONG><a name="[4f]"></a>_fp_init</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))
@@ -709,10 +724,10 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[65]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, clock and perif.o(i.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initButton
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initAdc
+<P><STRONG><a name="[66]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, clock and perif.o(i.__NVIC_EnableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initButton
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initAdc
 </UL>
 <P>
 <H3>

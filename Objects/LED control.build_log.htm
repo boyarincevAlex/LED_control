@@ -27,14 +27,14 @@ Project File Date:  02/17/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling display mode.c...
-.\inc\display mode.h(14): warning:  #1-D: last line of file ends without a newline
-  extern uint32_t bDisplayMode;
-.\inc\device mode.h(20): warning:  #1-D: last line of file ends without a newline
-  #endif /* __DEVICE_MODE_H */
-scr\display mode.c: 2 warnings, 0 errors
+compiling clock and perif.c...
+.\inc\clock and perif.h(3): warning:  #1295-D: Deprecated declaration initSystem - give arg types
+  void initSystem();
+scr\clock and perif.c(142): warning:  #1-D: last line of file ends without a newline
+  }
+scr\clock and perif.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=2432 RO-data=440 RW-data=68 ZI-data=1636  
+Program Size: Code=2496 RO-data=440 RW-data=68 ZI-data=1636  
 ".\Objects\LED control.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -66,7 +66,7 @@ Package Vendor: Keil
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

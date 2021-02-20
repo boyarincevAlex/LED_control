@@ -64,17 +64,20 @@ int get_b4(void)
 
 void EXTI3_IRQHandler() //Button 4
 	{
-		//Delay(5);
+		EXTI->PR = EXTI_PR_PR3;
+		EXTI->PR;
+		Delay(5);
 		GPIOC->ODR ^= GPIO_ODR_ODR_13;
 		b4++;
-		EXTI->PR |= EXTI_PR_PR3;
 		//sendLcdCommand(LCD_ADDR, 0b00000001);
 		//bDisplayMode = INFORMATION;
 	}
 
 void EXTI4_IRQHandler() //Button 1
 	{
-		EXTI->PR |= EXTI_PR_PR4;
+		EXTI->PR = EXTI_PR_PR4;
+		EXTI->PR;
+		Delay(5);
 		GPIOC->ODR ^= GPIO_ODR_ODR_13;
 		b1++;
 		//sendLcdCommand(LCD_ADDR, 0b00000001);
@@ -83,8 +86,22 @@ void EXTI4_IRQHandler() //Button 1
 
 void EXTI9_5_IRQHandler() //Button 3 and 2
 	{
-		GPIOC->ODR ^= GPIO_ODR_ODR_13;
-		b2++;
-		EXTI->PR |= EXTI_PR_PR5;
+		if(EXTI->PR & EXTI_PR_PR6)
+		{
+			EXTI->PR = EXTI_PR_PR6;
+			EXTI->PR;
+			b2++;
+			GPIOC->ODR ^= GPIO_ODR_ODR_13;
+    }
+		if(EXTI->PR & EXTI_PR_PR5)
+		{
+			EXTI->PR = EXTI_PR_PR5;
+			EXTI->PR;
+			b3++;
+			GPIOC->ODR ^= GPIO_ODR_ODR_13;
+    }
+		Delay(5);
+		//b2++;
+		//EXTI->PR |= EXTI_PR_PR5;
 		//EXTI->PR |= EXTI_PR_PR6;
 	}
