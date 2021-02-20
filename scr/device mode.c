@@ -90,14 +90,24 @@ void EXTI9_5_IRQHandler() //Button 3 and 2
 		{
 			EXTI->PR = EXTI_PR_PR6;
 			EXTI->PR;
-			b2++;
-			GPIOC->ODR ^= GPIO_ODR_ODR_13;
+			clearLcd();
+			if 	(bDisplayMode == MAIN)
+					bDisplayMode = INFORMATION;
+			else bDisplayMode = MAIN;
+			
+			
     }
 		if(EXTI->PR & EXTI_PR_PR5)
 		{
 			EXTI->PR = EXTI_PR_PR5;
 			EXTI->PR;
-			b3++;
+			if (bDisplayMode == INFORMATION)
+			{
+				if 	(bTimerMode == ENABLE)
+							bTimerMode = DISABLE;
+				else bTimerMode = ENABLE;
+			}
+			
 			GPIOC->ODR ^= GPIO_ODR_ODR_13;
     }
 		Delay(5);

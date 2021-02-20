@@ -133,3 +133,7 @@ void sendIntData3ToDisplay(int string, int column, int data)
 		sendLcdData(LCD_ADDR, DATA1[1]);
 		sendLcdData(LCD_ADDR, DATA1[2]);
 }
+void clearLcd(void)
+{
+	sendLcdCommand(LCD_ADDR, 0b00000001);
+}

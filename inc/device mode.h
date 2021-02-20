@@ -12,9 +12,11 @@ int get_b4(void);
 typedef enum _DEVICE_MODE
 {
 	ON = 1,
-	OFF = 2,
+	STOP = 2,
 	SETTINGS = 3
 } DEVICE_MODE;
 
+extern uint32_t bImpulseMode;
+extern uint32_t bTimerMode;
 
 #endif /* __DEVICE_MODE_H */

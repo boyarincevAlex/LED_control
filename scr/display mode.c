@@ -15,27 +15,31 @@ void displayModeHandler(uint32_t displayMode)
 		{
 		case MAIN:
 		{
-			but1 = get_b1();
-			but2 = get_b2();
-			but3 = get_b3();
-			but4 = get_b4();
-			sendLcdStringToPosition(1,1, "b1:");
-			sendLcdStringToPosition(1,8, "b2:");
-			sendLcdStringToPosition(2,1, "b3:");
-			sendLcdStringToPosition(2,8, "b4:");
+//			but1 = get_b1();
+//			but2 = get_b2();
+//			but3 = get_b3();
+//			but4 = get_b4();
+//			sendLcdStringToPosition(1,1, "b1:");
+//			sendLcdStringToPosition(1,8, "b2:");
+//			sendLcdStringToPosition(2,1, "b3:");
+//			sendLcdStringToPosition(2,8, "b4:");
 			
-			//sendLcdStringToPosition(1,5, "mA");
-			//sendCurrentDataToDisplay(1,1);
-			sendIntData3ToDisplay(1,4, but1);
-			sendIntData3ToDisplay(1,11, but2);
-			sendIntData3ToDisplay(2,4, but3);
-			sendIntData3ToDisplay(2,11, but4);
+			sendLcdStringToPosition(1,5, "mA");
+			sendCurrentDataToDisplay(1,1);
+			
+//			sendIntData3ToDisplay(1,4, but1);
+//			sendIntData3ToDisplay(1,11, but2);
+//			sendIntData3ToDisplay(2,4, but3);
+//			sendIntData3ToDisplay(2,11, but4);
 			break;
 		}
 		
 		case INFORMATION:
 		{
-			sendLcdStringToPosition(2,2, "test2");
+			sendLcdStringToPosition(1,1, "Timer:");
+			if (bTimerMode == ENABLE )
+				sendLcdStringToPosition(1,7, "ON ");
+			else sendLcdStringToPosition(1,7, "OFF");
 			break;
 		}
 		

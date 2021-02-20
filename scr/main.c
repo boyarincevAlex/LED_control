@@ -4,6 +4,9 @@
 
 int n = 0;
 uint32_t bDisplayMode = MAIN;
+uint32_t bTimerMode = DISABLE;
+uint32_t bImpulseMode = DISABLE;
+
 int main()
 {
 	initSystem();
