@@ -133,6 +133,22 @@ void sendIntData3ToDisplay(int string, int column, int data)
 		sendLcdData(LCD_ADDR, DATA1[1]);
 		sendLcdData(LCD_ADDR, DATA1[2]);
 }
+
+void sendIntData3PointToDisplay(int string, int column, int data)
+{
+		int adress = convertPositionToAdress(string, column);
+		int DATA1[4];
+		DATA1[0] = data/100 + 0x30;
+		DATA1[1] = data/10 % 10 + 0x30;
+		DATA1[2] = 0x2E;
+		DATA1[3] = data % 10 + 0x30;
+		sendLcdCommand(LCD_ADDR, adress);
+		sendLcdData(LCD_ADDR, DATA1[0]);
+		sendLcdData(LCD_ADDR, DATA1[1]);
+		sendLcdData(LCD_ADDR, DATA1[2]);
+		sendLcdData(LCD_ADDR, DATA1[3]);
+}
+
 void clearLcd(void)
 {
 	sendLcdCommand(LCD_ADDR, 0b00000001);

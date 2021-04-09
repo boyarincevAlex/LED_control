@@ -14,6 +14,7 @@ void Delay(uint32_t nCount);
 int convertPositionToAdress(uint8_t string, uint8_t column);
 void sendLcdStringToPosition(uint8_t string, uint8_t column, char *str);
 void sendIntData3ToDisplay(int string, int column, int data);
+void sendIntData3PointToDisplay(int string, int column, int data);
 void clearLcd(void);
 
 
